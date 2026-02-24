@@ -10,7 +10,7 @@
 /* ═══════════════════════════════════════════════
    DESIGN SYSTEM — ICY CRYSTALLINE LUXURY
    Arctic blue · Frost white · Deep navy · Crystal
-═══════════════════════════════════════════════ */
+═══════════════════════════════════════════ */
 :root {
   --ice-0:    #f0f7ff;
   --ice-1:    #daeeff;
@@ -516,45 +516,77 @@ section { position:relative; z-index: 2; }
   background: linear-gradient(180deg, #040f1e 0%, #020a16 100%);
   overflow:hidden;
 }
-.phil-grid { display:grid; grid-template-columns:1fr 1fr; }
-.phil-text { padding:0 6rem 0 0; display:flex; flex-direction:column; justify-content:center; }
+.phil-grid { 
+  display: grid; 
+  grid-template-columns: 1fr 1fr; 
+  max-width: 1240px;
+  margin: 0 auto;
+}
+.phil-text { 
+  padding: 0 3.5rem; 
+  display: flex; 
+  flex-direction: column; 
+  justify-content: center; 
+}
 .phil-pillars {
-  display:grid; grid-template-columns:1fr 1fr; gap:1px;
-  background:rgba(168,216,240,0.06); margin-top:3.5rem;
+  display: grid; 
+  grid-template-columns: 1fr 1fr; 
+  gap: 1px;
+  background: rgba(168,216,240,0.06); 
+  margin-top: 3.5rem;
 }
 .pillar {
-  background:#040f1e; padding:2rem 1.8rem;
-  border-left:2px solid transparent;
-  transition:border-color .35s, background .35s;
+  background: #040f1e; 
+  padding: 2rem 1.8rem;
+  border-left: 2px solid transparent;
+  transition: border-color .35s, background .35s;
 }
-.pillar:hover { border-color:var(--ice-3); background:rgba(95,179,224,0.04); }
+.pillar:hover { border-color: var(--ice-3); background: rgba(95,179,224,0.04); }
 .p-num {
-  font-family:var(--ff-dis); font-size:1.6rem; font-style:italic;
-  color:rgba(95,179,224,0.3);
-  transition:color .35s;
+  font-family: var(--ff-dis); 
+  font-size: 1.6rem; 
+  font-style: italic;
+  color: rgba(95,179,224,0.3);
+  transition: color .35s;
 }
-.pillar:hover .p-num { color:var(--ice-3); }
+.pillar:hover .p-num { color: var(--ice-3); }
 .p-title {
-  font-size:.7rem; font-weight:500; letter-spacing:.15em; text-transform:uppercase;
-  color:var(--ice-2); margin-top:.7rem;
+  font-size: .7rem; 
+  font-weight: 500; 
+  letter-spacing: .15em; 
+  text-transform: uppercase;
+  color: var(--ice-2); 
+  margin-top: .7rem;
 }
 .p-body {
-  font-size:.8rem; font-weight:200; color:var(--text-faint); line-height:1.7; margin-top:.45rem;
+  font-size: .8rem; 
+  font-weight: 200; 
+  color: var(--text-faint); 
+  line-height: 1.7; 
+  margin-top: .45rem;
 }
 .phil-visual {
-  position:relative; overflow:hidden; min-height:600px;
+  position: relative; 
+  overflow: hidden; 
+  min-height: 600px;
 }
-.phil-visual img { filter:brightness(.6) saturate(1.4) hue-rotate(160deg); }
+.phil-visual img { filter: brightness(.6) saturate(1.4) hue-rotate(160deg); }
 .phil-visual::before {
-  content:''; position:absolute; inset:0; z-index:1;
-  background:linear-gradient(to right, #040f1e 0%, rgba(4,15,30,0.2) 50%, transparent 100%);
+  content: ''; 
+  position: absolute; 
+  inset: 0; 
+  z-index: 1;
+  background: linear-gradient(to right, #040f1e 0%, rgba(4,15,30,0.2) 50%, transparent 100%);
 }
 /* Crystalline hex pattern */
 .phil-hex {
-  position:absolute; z-index:2; inset:0; pointer-events:none;
-  opacity:.04;
+  position: absolute; 
+  z-index: 2; 
+  inset: 0; 
+  pointer-events: none;
+  opacity: .04;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='52'%3E%3Cpolygon points='30,1 59,16 59,36 30,51 1,36 1,16' fill='none' stroke='%235fb3e0' stroke-width='1'/%3E%3C/svg%3E");
-  background-size:60px 52px;
+  background-size: 60px 52px;
 }
 
 /* ─── FEEDBACK ───────────────────────────────── */
@@ -707,31 +739,20 @@ section { position:relative; z-index: 2; }
 .rbar-fill { height:100%; background:linear-gradient(90deg,var(--ice-3),var(--azure)); transition:width 1.2s var(--ease-out); }
 .rbar-c { font-size:.58rem; color:var(--text-faint); width:14px; }
 
-/* Admin pending notice */
-.pending-notice {
-  display:flex; align-items:center; gap:.8rem;
-  padding:1rem 1.5rem; margin-bottom:2.5rem;
-  background:rgba(200,168,75,0.08); border:1px solid rgba(200,168,75,0.25);
+/* Live badge */
+.rv-live-badge {
+  display:inline-flex; align-items:center; gap:.5rem;
+  font-size:.6rem; letter-spacing:.18em; text-transform:uppercase; color:var(--ice-3);
+  padding:.35rem .8rem; border:1px solid var(--border);
+  background:rgba(95,179,224,0.05); margin-left:1rem;
 }
-.pending-notice svg { width:16px; height:16px; stroke:var(--gold); stroke-width:1.5; fill:none; flex-shrink:0; }
-.pending-notice span { font-size:.76rem; font-weight:200; color:rgba(200,168,75,0.7); }
-
-/* Admin bar */
-.admin-bar {
-  display:flex; align-items:center; gap:1rem; flex-wrap:wrap;
-  margin-bottom:2.5rem; padding:1rem 1.5rem;
-  background:rgba(95,179,224,0.05); border:1px solid var(--border);
+.rv-live-badge::before {
+  content:''; width:6px; height:6px; border-radius:50%;
+  background:var(--ice-3);
+  animation:livePulse 1.8s ease-in-out infinite;
+  box-shadow:0 0 8px var(--glow-str);
 }
-.admin-bar label { font-size:.62rem; letter-spacing:.15em; text-transform:uppercase; color:var(--text-faint); margin-right:.5rem; }
-#adminPass { width:180px; padding:.4rem .7rem; background:rgba(168,216,240,0.04); border:1px solid var(--border); color:var(--ice-1); font-family:var(--ff-body); font-size:.8rem; outline:none; }
-#adminPass:focus { border-color:var(--ice-3); }
-.btn-admin {
-  padding:.4rem 1rem; background:transparent; border:1px solid var(--border-hi);
-  color:var(--text-dim); font-size:.65rem; letter-spacing:.12em; text-transform:uppercase;
-  transition:all .25s;
-}
-.btn-admin:hover { border-color:var(--ice-3); color:var(--ice-1); }
-#adminStatus { font-size:.7rem; color:var(--ice-3); font-weight:200; }
+@keyframes livePulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.4;transform:scale(.7)} }
 
 /* Reviews masonry */
 .rv-grid {
@@ -750,15 +771,6 @@ section { position:relative; z-index: 2; }
   background:linear-gradient(90deg, var(--border), transparent);
 }
 .rv-card:hover { border-color:var(--ice-3); background:rgba(95,179,224,0.03); }
-/* Pending overlay */
-.rv-card.pending { opacity:.6; }
-.rv-card.pending::after {
-  content:'PENDING APPROVAL';
-  position:absolute; top:.6rem; right:.8rem;
-  font-size:.5rem; letter-spacing:.18em;
-  color:rgba(200,168,75,0.6); border:1px solid rgba(200,168,75,0.3);
-  padding:.15rem .5rem;
-}
 .rv-head { display:flex; align-items:center; gap:.9rem; margin-bottom:1rem; }
 .rv-av {
   width:38px; height:38px; flex-shrink:0;
@@ -772,32 +784,11 @@ section { position:relative; z-index: 2; }
 .rv-stars { display:flex; gap:.22rem; margin-bottom:.7rem; }
 .rv-stars svg { width:10px; height:10px; stroke:var(--gold-lt); fill:var(--gold-lt); stroke-width:1.5; }
 .rv-text { font-size:.84rem; font-weight:200; line-height:1.75; color:var(--text-dim); }
-.rv-approve-btn {
-  display:none; margin-top:1rem; padding:.35rem .9rem;
-  background:rgba(95,179,224,0.1); border:1px solid var(--ice-3);
-  color:var(--ice-2); font-size:.62rem; letter-spacing:.12em; text-transform:uppercase;
-  transition:all .25s;
-}
-.rv-approve-btn:hover { background:rgba(95,179,224,0.22); }
-.admin-logged .rv-approve-btn { display:inline-block; }
 .rv-empty {
   text-align:center; padding:5rem 2rem;
   background:var(--abyss);
   color:var(--text-faint); font-size:.78rem; letter-spacing:.15em; text-transform:uppercase;
 }
-.rv-live-badge {
-  display:inline-flex; align-items:center; gap:.5rem;
-  font-size:.6rem; letter-spacing:.18em; text-transform:uppercase; color:var(--ice-3);
-  padding:.35rem .8rem; border:1px solid var(--border);
-  background:rgba(95,179,224,0.05); margin-left:1rem;
-}
-.rv-live-badge::before {
-  content:''; width:6px; height:6px; border-radius:50%;
-  background:var(--ice-3);
-  animation:livePulse 1.8s ease-in-out infinite;
-  box-shadow:0 0 8px var(--glow-str);
-}
-@keyframes livePulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.4;transform:scale(.7)} }
 
 /* ─── CONTACT ─────────────────────────────────── */
 #contact {
@@ -918,7 +909,7 @@ section { position:relative; z-index: 2; }
 @media(max-width:1024px){
   .about-grid, .feedback-grid, .contact-grid, .footer-grid{ grid-template-columns:1fr; gap:3.5rem; }
   .phil-grid { grid-template-columns:1fr; }
-  .phil-text { padding:5rem 0; }
+  .phil-text { padding:5rem 3.5rem; }
   .phil-visual { min-height:340px; }
   .phil-visual::before { background:linear-gradient(to bottom, #040f1e 0%, transparent 40%, #040f1e 100%); }
   .menu-top { grid-template-columns:1fr; gap:2rem; }
@@ -943,6 +934,7 @@ section { position:relative; z-index: 2; }
   .footer-bottom { flex-direction:column; gap:.6rem; text-align:center; }
   .hero-content { padding:0 1.5rem; }
   .phil-pillars { grid-template-columns:1fr; }
+  .phil-text { padding:5rem 1.5rem; }
 }
 </style>
 </head>
@@ -955,8 +947,8 @@ section { position:relative; z-index: 2; }
 <!-- NAV -->
 <nav id="nav">
   <div class="nav-brand">
-    <div class="nav-dev">श्री कृष्ण रसपान गुरे</div>
-    <div class="nav-eng">Shree Krishna Raspangure</div>
+    <div class="nav-dev">श्री कृष्ण रसपान गृह</div>
+    <div class="nav-eng">Shree Krishna Raspangruh</div>
   </div>
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
@@ -991,8 +983,8 @@ section { position:relative; z-index: 2; }
 
   <div class="hero-content">
     <div class="hero-tag">Est. 2009 — Nashik, Maharashtra</div>
-    <h1 class="hero-dev-title">श्री कृष्ण रसपान गुरे</h1>
-    <div class="hero-eng-title">Shree Krishna Raspangure</div>
+    <h1 class="hero-dev-title">श्री कृष्ण रसपान गृह</h1>
+    <div class="hero-eng-title">Shree Krishna Raspangruh</div>
     <div class="hero-rule"></div>
     <p class="hero-sub">
       Where nature's finest fruits meet <strong>icy cold perfection</strong>.<br>
@@ -1033,7 +1025,7 @@ section { position:relative; z-index: 2; }
         <h2 class="s-title reveal d1">Rooted in<br><em>Pure Devotion</em></h2>
         <div class="s-rule reveal d2"></div>
         <p class="s-body reveal d2">
-          Named in reverence to Lord Krishna — the embodiment of purity and abundance — Shree Krishna Raspangure has served Nashik for over fifteen years with one unwavering promise: nothing but freshness.<br><br>
+          Named in reverence to Lord Krishna — the embodiment of purity and abundance — Shree Krishna Raspangruh has served Nashik for over fifteen years with one unwavering promise: nothing but freshness.<br><br>
           Every fruit is sourced at peak ripeness, pressed the same morning, chilled to crystalline perfection, and served with the warmth of tradition. No syrups. No concentrates. No compromises.
         </p>
         <div class="about-quote reveal d3">
@@ -1080,7 +1072,7 @@ section { position:relative; z-index: 2; }
 <!-- ══════════ PHILOSOPHY ══════════ -->
 <section id="philosophy">
   <div class="phil-grid">
-    <div class="phil-text section-wrap" style="padding-right:0">
+    <div class="phil-text">
       <div class="s-eyebrow reveal">What We Stand For</div>
       <h2 class="s-title reveal d1">The Art of<br><em>Cold Craft</em></h2>
       <div class="s-rule reveal d2"></div>
@@ -1170,7 +1162,7 @@ section { position:relative; z-index: 2; }
           </div>
           <button class="btn-submit" onclick="submitReview()">Submit Review</button>
           <p style="font-size:.62rem;color:var(--text-faint);margin-top:1rem;text-align:center;line-height:1.6;">
-            Reviews are approved by our team before appearing publicly.
+            Your review will appear immediately after submission.
           </p>
         </div>
       </div>
@@ -1195,19 +1187,6 @@ section { position:relative; z-index: 2; }
         <div class="avg-label" id="avgLabel">No reviews yet</div>
         <div class="rating-bars" id="ratingBars"></div>
       </div>
-    </div>
-
-    <!-- Admin panel -->
-    <div class="admin-bar reveal" id="adminBar">
-      <label>Admin Access:</label>
-      <input type="password" id="adminPass" placeholder="Password...">
-      <button class="btn-admin" onclick="tryAdmin()">Unlock</button>
-      <span id="adminStatus"></span>
-    </div>
-
-    <div class="pending-notice reveal" id="pendingNotice" style="display:none">
-      <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
-      <span>Reviews require admin approval before appearing publicly. Thank you for your patience.</span>
     </div>
 
     <div class="rv-grid reveal d1" id="reviewsGrid">
@@ -1268,8 +1247,8 @@ section { position:relative; z-index: 2; }
   <div class="section-wrap">
     <div class="footer-grid">
       <div class="footer-brand">
-        <div class="footer-logo-dev">श्री कृष्ण रसपान गुरे</div>
-        <div class="footer-logo-eng">Shree Krishna Raspangure</div>
+        <div class="footer-logo-dev">श्री कृष्ण रसपान गृह</div>
+        <div class="footer-logo-eng">Shree Krishna Raspangruh</div>
         <p>Serving pure, cold-pressed freshness to Nashik since 2009. Every glass is a promise.</p>
         <div class="footer-socials">
           <a class="fsoc" href="#" aria-label="Instagram"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
@@ -1294,12 +1273,12 @@ section { position:relative; z-index: 2; }
       <div class="footer-col">
         <h4>Contact</h4>
         <a href="tel:+919999999999">+91 99999 99999</a>
-        <a href="mailto:hello@raspangure.in">hello@raspangure.in</a>
+        <a href="mailto:hello@raspangruh.in">hello@raspangruh.in</a>
         <a href="https://wa.me/919999999999">WhatsApp Us</a>
       </div>
     </div>
     <div class="footer-bottom">
-      <span>&copy; 2025 Shree Krishna Raspangure · All Rights Reserved</span>
+      <span>&copy; 2025 Shree Krishna Raspangruh · All Rights Reserved</span>
       <span>Pure · Natural · Icy Cold</span>
     </div>
   </div>
@@ -1315,7 +1294,7 @@ section { position:relative; z-index: 2; }
   <div class="success-box">
     <div class="succ-mark"><svg viewBox="0 0 24 24"><polyline points="20,6 9,17 4,12"/></svg></div>
     <h3>Thank You</h3>
-    <p>Your review has been submitted and is pending approval from our team. We appreciate you taking the time to share your experience.</p>
+    <p>Your review has been submitted and is now live. We appreciate you taking the time to share your experience.</p>
     <button class="btn-primary" onclick="closeSuccess()">Back to Reviews</button>
   </div>
 </div>
@@ -1647,29 +1626,11 @@ sw.addEventListener('mouseleave', () => setStars(selectedStar));
    { id, name, rating, comment, time, approved }
 ═══════════════════════════════════════════ */
 const STORE_KEY = 'skr_reviews_v2';
-const ADMIN_PWD = 'krishna2025'; // ← Change this before launch
 
 function getReviews() {
   try { return JSON.parse(localStorage.getItem(STORE_KEY) || '[]'); } catch { return []; }
 }
 function saveReviews(arr) { localStorage.setItem(STORE_KEY, JSON.stringify(arr)); }
-
-/* ── Admin state ── */
-let isAdmin = false;
-
-function tryAdmin() {
-  const pwd = document.getElementById('adminPass').value;
-  const status = document.getElementById('adminStatus');
-  if (pwd === ADMIN_PWD) {
-    isAdmin = true;
-    status.textContent = 'Access granted — reviews visible';
-    document.getElementById('reviewsGrid').classList.add('admin-logged');
-    renderReviews();
-  } else {
-    status.textContent = 'Incorrect password';
-    status.style.color = '#e07070';
-  }
-}
 
 /* ── Submit ── */
 function submitReview() {
@@ -1686,7 +1647,7 @@ function submitReview() {
     id: Date.now(),
     name, rating: selectedStar, comment,
     time: new Date().toISOString(),
-    approved: false,  // Requires admin approval
+    approved: true,  // Auto-approve for immediate display
   };
   reviews.unshift(newReview);
   saveReviews(reviews);
@@ -1698,7 +1659,6 @@ function submitReview() {
 
   renderReviews();
   updateAvg();
-  document.getElementById('pendingNotice').style.display = 'flex';
   document.getElementById('success-ov').classList.add('show');
 }
 
@@ -1709,16 +1669,6 @@ function closeSuccess() {
 document.getElementById('success-ov').addEventListener('click', e => {
   if (e.target === e.currentTarget) closeSuccess();
 });
-
-/* ── Approve ── */
-function approveReview(id) {
-  const reviews = getReviews();
-  const r = reviews.find(x => x.id === id);
-  if (r) r.approved = true;
-  saveReviews(reviews);
-  renderReviews();
-  updateAvg();
-}
 
 /* ── Render reviews ── */
 function timeAgo(iso) {
@@ -1734,18 +1684,16 @@ const S_SVG = `<svg viewBox="0 0 24 24"><polygon points="12,2 15.09,8.26 22,9.27
 
 function renderReviews() {
   const all = getReviews();
-  // Show approved always; show pending only to admin
-  const visible = isAdmin ? all : all.filter(r => r.approved);
+  const visible = all.filter(r => r.approved);
   const grid = document.getElementById('reviewsGrid');
 
   if (!visible.length) {
-    grid.innerHTML = '<div class="rv-empty">No approved reviews yet — be the first to share your experience</div>';
+    grid.innerHTML = '<div class="rv-empty">No reviews yet — be the first to share your experience</div>';
     return;
   }
 
-  grid.className = 'rv-grid reveal d1' + (isAdmin ? ' admin-logged' : '');
   grid.innerHTML = visible.map(r => `
-    <div class="rv-card${r.approved ? '' : ' pending'}">
+    <div class="rv-card">
       <div class="rv-head">
         <div class="rv-av">${r.name.charAt(0).toUpperCase()}</div>
         <div>
@@ -1755,7 +1703,6 @@ function renderReviews() {
       </div>
       <div class="rv-stars">${S_SVG.repeat(r.rating)}</div>
       <div class="rv-text">${esc(r.comment)}</div>
-      ${!r.approved && isAdmin ? `<button class="rv-approve-btn" onclick="approveReview(${r.id})">Approve & Publish</button>` : ''}
     </div>
   `).join('');
 }
@@ -1771,7 +1718,7 @@ function updateAvg() {
   if (!approved.length) {
     numEl.textContent = '—';
     starsEl.innerHTML = '';
-    labelEl.textContent = 'No approved reviews yet';
+    labelEl.textContent = 'No reviews yet';
     barsEl.innerHTML = '';
     return;
   }
